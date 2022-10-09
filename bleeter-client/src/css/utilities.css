@@ -1,0 +1,17 @@
+.btn {
+	display: inline-block;
+	padding: 8px 25px;
+	cursor: pointer;
+	background: var(--primary-color);
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+}
+
+a {
+	text-decoration: none;
+}
+
+.w100 {
+	width: 100%;
+}

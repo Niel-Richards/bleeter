@@ -1,0 +1,192 @@
+@font-face {
+	font-family: 'Noto Serif JP';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: local('Noto Serif JP'), local('Noto-Serif-JP'),
+		url('../font/NotoSerifJP-Regular.otf') format('otf');
+}
+
+@font-face {
+	font-family: 'Noto Serif JP';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: local('Noto Serif JP'), local('Noto-Serif-JP'),
+		url('../font/NotoSerifJP-Bold.otf') format('otf');
+}
+
+:root {
+	--primary-color: #0099cb;
+	--secondary-color: #29ad57;
+	--light-color: #e7f3dd;
+}
+*, *::before, *::after {
+	box-sizing:border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: 'Noto Serif JP', sans-serif;
+	background-color: var(--primary-color);
+}
+
+.header {
+	max-width: 1100px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+}
+
+.logo-tag {
+	padding-top:80px;
+}
+
+.logo-tag img {
+	width: 200px;
+	height: 80px;
+}
+
+.logo-tag h3 {
+	color: #fff;
+}
+
+#sheep {
+	width: 200px;
+	height: 200px;
+	margin-top:20px;
+}
+
+.stage-shell { 
+	max-width: 1100px;
+	margin: 0 auto;
+	overflow: auto;
+	padding: 10px;
+	border-radius: 5px;
+	background-color: rgba(255,255,255,0.3);
+}
+
+.stage-main {
+	width: 100%;
+	margin: 0 auto;
+	padding: 20px;
+	border-radius: 5px;
+	background-color: #fff;
+	min-height: 60vh;
+}
+
+.title {
+	color: var(--secondary-color);
+}
+
+.blurb p {
+	padding: 3px 0;
+	font-size: 0.8rem;
+	margin: 10px 0;
+}
+
+.middle {
+	border-top: solid 2px #e6e6e6;
+	border-bottom: solid 2px #e6e6e6;
+	display: flex;
+	justify-content: space-between;
+}
+
+.bleet-wrapper { 
+	font-size: 0.8rem;
+	display: flex;
+	margin-top: 5px;
+	width: 100%;
+}
+
+.avatar { 
+	width: 60px;
+	height: 60px;
+}
+
+.avatar img {
+	width: 60px;
+	height: 60px;
+	border-radius: 5px 5px 5px 5px;
+}
+
+.bleet { 
+	background-color: var(--light-color);
+	border-radius: 5px 5px 5px 5px;
+	margin-left: 20px;
+	padding:5px;
+	width: 100%;
+	position:relative;
+	
+}
+
+.bleet::before {
+	content:' ';
+	width: 10px;
+	height: 15px;
+	background-color: var(--light-color);
+	position: absolute;
+	top: 50%;
+	z-index:0;
+	transform:translate(-15px, 5px) rotate(-90deg) skewX(20deg);
+	clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+/* The form styles */
+.bleet-form {
+	margin: 30px auto;
+	width: 50%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+}
+
+.bleet-help {
+	font-size: 0.8rem;
+	text-align: right;
+}
+
+.text-muted {
+	color: #c6d1c581;
+}
+
+.bleet-input {
+	width: 100%;
+	height: 32px;
+	border: 1px solid var(--primary-color);
+	padding: 5px;
+	margin: 10px 0;
+	border-radius: 5px;
+}
+
+#bleet-input:focus {
+	border: 2px solid var(--primary-color);
+	outline: none;
+}
+
+/* Altered after 1st Aug */
+
+.bleet-page {
+	display: flex;
+	align-content: center;
+	flex-direction: column;
+}
+
+.bleet-back-home { 
+	font-size: 0.9rem;
+	margin-bottom: 15px;
+}
+
+.bleet-main {
+	margin: auto;
+}
+
+.highlight {
+	display: block;
+	background-color: red;
+	color: white;
+	margin-top: 20px;
+}
