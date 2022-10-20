@@ -1,4 +1,7 @@
 # bleeter
  Micro blogging site
 
-Small application to test my knowledge of React, Express, Node, SQL, HTML and CSS
+Frontend is created with React
+Backend is Node and Express
+
+The database used is SQLite3
