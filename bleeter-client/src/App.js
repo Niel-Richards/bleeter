@@ -41,7 +41,7 @@ const router = createBrowserRouter([
     </Layout>,
   },
   {
-    path: "/bleet",
+    path: "/new-bleet",
     element: <Layout><NewBleet /></Layout>,
   },
   {
