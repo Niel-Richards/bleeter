@@ -13,7 +13,7 @@ const Middle = () => {
                 <h3 className="title">
                     Latest Bleets
                 </h3>
-                <Link to="/bleet" className="btn">Bleet</Link>
+                <Link to="/new-bleet" className="btn">Bleet</Link>
             </div>
         </>
     );
