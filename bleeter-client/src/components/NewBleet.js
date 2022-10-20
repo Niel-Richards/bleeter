@@ -14,8 +14,6 @@ const NewBleet = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(e.timeStamp);
-        console.log(e.target.bleet.value);
         if(e.target.bleet.value.length > 0) navigate('/home');
     };
 
@@ -23,7 +21,6 @@ const NewBleet = () => {
         <div>
             <form className="bleet-form" action="" method="post" id="bleet-form" onSubmit={handleSubmit}>
                     <h2 className="title">New Bleet!</h2>
-                    {/* <label for="bleet-input" class="title">New Bleet</label> <br /> */}
                     <input type="text" className="bleet-input" name="bleet" placeholder="What's on your Mind" autoComplete="off" onChange={updateCount}/> <br />
                     <small className="bleet-help"><span id="bleet-count">{charCount}</span> characters left!</small><br />
 

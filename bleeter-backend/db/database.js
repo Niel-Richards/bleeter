@@ -1,55 +1,40 @@
 const sqlite3 = require('sqlite3').verbose();
 const db =  new sqlite3.Database('./db/bleeterDB.db');
 
-function selectAllBleets() {
+const selectAll = (query) => {
     return new Promise((res, rej) => {
-        db.all("SELECT * FROM bleets ORDER BY bleet_id DESC",(err,row) => {
+        db.all(query,(err,row) => {
             err ? rej(err):res(row);
         });
     });
-    
 }
 
-function createBleet(newBleet) {
-    const createQuery = `INSERT INTO bleets(bleet) VALUES(?)`;
+const insertRow = (query, data) => {
     return new Promise((res, rej) => {
-        db.run(createQuery, newBleet[0].bleet,function (err) {
-            // console.warn("Inserted id:", this);
+        db.run(query, data,function (err) {
             err ? rej(err):res(this.lastID);
         });
     });
 
 }
-function deleteBleet(bleet_id) {
-    const deleteQuery = `DELETE FROM bleets where bleet_id=?`;
+const deleteRow = (query, _id) => {
     return new Promise((res, rej) => {
-        db.run(deleteQuery, bleet_id, function (err) {
+        db.run(query, _id, function (err) {
             err ? rej(err):res(this);
         });
     });
 
 }
 
-function selectBleet(bleet_id) {
-    const selectQuery = `SELECT * FROM bleets where bleet_id=?`;
+const selectRow = (query, _id) => {
     return new Promise((res, rej) => {
-        db.get(selectQuery, bleet_id,(err,row) => {
+        db.get(query, _id,(err,row) => {
             err ? rej(err):res(row);
         });
     });
 
 }
 
-// function updateTask(bleet_id, task) {
-//     //this has a bug. only the number of rows affected will be returned and no data.
-//     return new Promise((res, rej) => {
-//         db.run("UPDATE bleets SET description =?, isComplete = ? WHERE id = ?", [task[0].description, task[0].isComplete, task_id], function (err) {
-//             err ? rej(err):res(this);
-//         });
-//     });
-
-// }
-
-module.exports = {selectBleet, createBleet, selectAllBleets, deleteBleet};
+module.exports = {selectRow, insertRow, selectAll, deleteRow};
 
 //TODO make this a DRY implementation!
